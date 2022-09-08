@@ -1,27 +1,89 @@
-
-
 class BankAccount
 {
     public int AccountNumber { get; }
-    public string Owner { get; set; }
+
+    public string Owner { set; get; }
+
     public decimal Balance { get; private set; }
-    public BankAccount(int accountnum, string owner, int initialnalance)
+
+    public Transaction[] Transactions { get; set; } = new Transaction[0];
+
+    public BankAccount(int accountNumber, string owner, decimal initialBalance)
     {
-        AccountNumber = accountnum;
+        AccountNumber = accountNumber;
         Owner = owner;
-        Balance = initialnalance;
+
+        Deposit(initialBalance);
     }
-    public void Deposit(Decimal ammount)
+
+    public void Deposit(decimal amount)
     {
-        Balance = Balance + ammount;
-    }
-    public void Whithdraw(decimal ammount)
-    {
-        if (ammount > Balance)
+        if (amount <= 0)
         {
-            System.Console.WriteLine("ma haysatid lacag kugu filan");
             return;
         }
-        Balance = Balance - ammount;
+        if (amount < 100)
+        {
+            System.Console.WriteLine("$100 wax ka yar lama ogala saxiib😂");
+            return;
+        }
+        Balance += amount;
+
+        var transaction = new Transaction()
+        {
+            Reference = Transactions.Length + 1,
+            Amount = amount,
+            Date = DateTime.Now
+        };
+
+        var transactionCount = Transactions.Length;
+        var oldTransactions = Transactions;
+
+        Transactions = new Transaction[transactionCount + 1];
+
+        // Soo celi xogtii hore.
+        var position = 0;
+        foreach (var oldTransaction in oldTransactions)
+        {
+            Transactions[position] = oldTransaction;
+            position += 1;
+        }
+
+        Transactions[transactionCount] = transaction;
+    }
+
+    public void Withdraw(decimal amount)
+    {
+        if (amount > Balance)
+        {
+            Console.WriteLine("Ma haysatid lacag kugu filan! 😛");
+            return; // Joog! 😂
+        }
+        if (amount < 100)
+        {
+            System.Console.WriteLine("$100 wax ka yar lama ogala saxiib😂");
+            return;
+        }
+        Balance -= amount;
+        var transaction = new Transaction()
+        {
+            Reference = Transactions.Length + 1,
+            Amount = -amount,
+            Date = DateTime.Now
+        };
+
+        var transactionCount = Transactions.Length;
+        var oldTransactions = Transactions;
+
+        Transactions = new Transaction[transactionCount + 1];
+
+        var position = 0;
+        foreach (var oldTransaction in oldTransactions)
+        {
+            Transactions[position] = oldTransaction;
+            position += 1;
+        }
+
+        Transactions[transactionCount] = transaction;
     }
 }

@@ -1,0 +1,15 @@
+C:\Users\abdia\Desktop\Practicing\Account-management\bin\Debug\net6.0\Account-management.exe
+C:\Users\abdia\Desktop\Practicing\Account-management\bin\Debug\net6.0\Account-management.deps.json
+C:\Users\abdia\Desktop\Practicing\Account-management\bin\Debug\net6.0\Account-management.runtimeconfig.json
+C:\Users\abdia\Desktop\Practicing\Account-management\bin\Debug\net6.0\Account-management.dll
+C:\Users\abdia\Desktop\Practicing\Account-management\bin\Debug\net6.0\ref\Account-management.dll
+C:\Users\abdia\Desktop\Practicing\Account-management\bin\Debug\net6.0\Account-management.pdb
+C:\Users\abdia\Desktop\Practicing\Account-management\obj\Debug\net6.0\Account-management.csproj.AssemblyReference.cache
+C:\Users\abdia\Desktop\Practicing\Account-management\obj\Debug\net6.0\Account-management.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\abdia\Desktop\Practicing\Account-management\obj\Debug\net6.0\Account-management.AssemblyInfoInputs.cache
+C:\Users\abdia\Desktop\Practicing\Account-management\obj\Debug\net6.0\Account-management.AssemblyInfo.cs
+C:\Users\abdia\Desktop\Practicing\Account-management\obj\Debug\net6.0\Account-management.csproj.CoreCompileInputs.cache
+C:\Users\abdia\Desktop\Practicing\Account-management\obj\Debug\net6.0\Account-management.dll
+C:\Users\abdia\Desktop\Practicing\Account-management\obj\Debug\net6.0\ref\Account-management.dll
+C:\Users\abdia\Desktop\Practicing\Account-management\obj\Debug\net6.0\Account-management.pdb
+C:\Users\abdia\Desktop\Practicing\Account-management\obj\Debug\net6.0\Account-management.genruntimeconfig.cache

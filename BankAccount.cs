@@ -6,7 +6,8 @@ class BankAccount
 
     public decimal Balance { get; private set; }
 
-    public Transaction[] Transactions { get; set; } = new Transaction[0];
+    // public Transaction[] Transactions { get; set; } = new Transaction[0];
+    public List<Transaction>Transactions { get; set; }=new List<Transaction>();
 
     public BankAccount(int accountNumber, string owner, decimal initialBalance)
     {
@@ -31,25 +32,26 @@ class BankAccount
 
         var transaction = new Transaction()
         {
-            Reference = Transactions.Length + 1,
+            Reference = Transactions.Count + 1,
             Amount = amount,
             Date = DateTime.Now
         };
+//////////this old verion or array 
+        var transactionCount = Transactions.Count;
+        // var oldTransactions = Transactions;
 
-        var transactionCount = Transactions.Length;
-        var oldTransactions = Transactions;
+        // Transactions = new Transaction[transactionCount + 1];
 
-        Transactions = new Transaction[transactionCount + 1];
+        // // Soo celi xogtii hore.
+        // var position = 0;
+        // foreach (var oldTransaction in oldTransactions)
+        // {
+        //     Transactions[position] = oldTransaction;
+        //     position += 1;
+        // }
 
-        // Soo celi xogtii hore.
-        var position = 0;
-        foreach (var oldTransaction in oldTransactions)
-        {
-            Transactions[position] = oldTransaction;
-            position += 1;
-        }
-
-        Transactions[transactionCount] = transaction;
+        // Transactions[transactionCount] = transaction;
+        Transactions.Add(transaction);
     }
 
     public void Withdraw(decimal amount)
@@ -67,23 +69,26 @@ class BankAccount
         Balance -= amount;
         var transaction = new Transaction()
         {
-            Reference = Transactions.Length + 1,
+            Reference = Transactions.Count + 1,
             Amount = -amount,
             Date = DateTime.Now
         };
 
-        var transactionCount = Transactions.Length;
-        var oldTransactions = Transactions;
+        var transactionCount = Transactions.Count;
+        ///array resize
+        // var oldTransactions = Transactions;
 
-        Transactions = new Transaction[transactionCount + 1];
+        // Transactions = new Transaction[transactionCount + 1];
 
-        var position = 0;
-        foreach (var oldTransaction in oldTransactions)
-        {
-            Transactions[position] = oldTransaction;
-            position += 1;
-        }
+        // var position = 0;
+        // foreach (var oldTransaction in oldTransactions)
+        // {
+        //     Transactions[position] = oldTransaction;
+        //     position += 1;
+        // }
 
-        Transactions[transactionCount] = transaction;
+        // Transactions[transactionCount] = transaction;
+
+        Transactions.Add(transaction);
     }
 }

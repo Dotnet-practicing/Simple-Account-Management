@@ -22,3 +22,13 @@ System.Console.Write("\t ammount"+item.Amount);
 System.Console.Write("\t date"+item.Date);
 System.Console.WriteLine();
 }
+
+
+var List = new List<string>();
+List.Add("abdiaziiz");
+List.Add("ali");
+List.Add("Mohamed");
+System.Console.WriteLine(List.Count);
+foreach (var item in List){
+    System.Console.WriteLine(item);
+}
